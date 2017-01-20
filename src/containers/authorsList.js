@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 
-class BookList extends Component {
-    constructor(props) {
-        super(props);
+class AuthorsList extends Component {
+    constructor() {
+        super();
     }
 
     renderList() {
-        return this.props.books.map(book => <li key={book.title} className="list-group-item">{book.title}</li>);
+        return this.props.authors.map(author => <li key={author.name} className="list-group-item">{author.name}</li>);
     }
 
     render() {
@@ -21,8 +22,8 @@ class BookList extends Component {
 
 function mapStateToProps(state) {
     return {
-        books: state.books
+        authors: state.authors
     }
 }
 
-export default connect(mapStateToProps)(BookList);
+export default connect(mapStateToProps)(AuthorsList);
