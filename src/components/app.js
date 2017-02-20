@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import BookList from '../containers/bookList';
 import AuthorList from '../containers/authorsList';
+import BookDetail from '../containers/bookDetail';
 
 export default class App extends Component {
     render() {
         return (
             <div>
                 <div>
-                    <AuthorList />
+                    <BookList />
                 </div>
                 <div>
-                    <BookList />
+                    <BookDetail/>
                 </div>
             </div>
         );

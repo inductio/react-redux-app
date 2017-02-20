@@ -1,8 +1,10 @@
-const SELECT_BOOK = "SELECT_BOOK";
+const BOOK_SELECTED = "BOOK_SELECTED";
 
-export default function(book) {
+//selectBook is an ActionCreator  and it needs to return an action,
+// an object with a type property
+export default function selectBook(book) {
     return {
-        type: SELECT_BOOK,
-        selectBook: console.log('book selected:', book.title)
+        type: BOOK_SELECTED,
+        payload: book
     }
 }
