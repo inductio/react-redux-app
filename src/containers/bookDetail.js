@@ -9,7 +9,8 @@ export class BookDetail extends Component {
                 {this.props.book ?
                     <div>
                         <h5>Details for:</h5>
-                        <h6>{this.props.book.title}</h6>
+                        <h6>Title: {this.props.book.title}</h6>
+                        <h6>Author: {this.props.book.author}</h6>
                     </div>
                     : <div>Please, select a book</div>
                 }
