@@ -7,6 +7,9 @@ export default class App extends Component {
     render() {
         return (
             <div>
+                <div className="authors">
+                    <AuthorList />
+                </div>
                 <div>
                     <BookList />
                 </div>

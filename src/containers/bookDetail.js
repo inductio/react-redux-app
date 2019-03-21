@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 export class BookDetail extends Component {
-
     render() {
         return (
             <div>
