@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import selectBook from '../actions/index';
+import { selectBookAction } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class BookList extends Component {
@@ -14,7 +14,7 @@ class BookList extends Component {
                 <li
                     key={book.title}
                     className="list-group-item"
-                    onClick={() => this.props.selectBook(book)}
+                    onClick={() => this.props.selectBookAction(book)}
                 >
                     {book.title}
                 </li>
@@ -35,7 +35,7 @@ function mapStateToProps(state) {
     // WhatEver is returned will up as props
     // inside of Booklist
     return {
-        books: state.books
+        books: state.activeAuthorBooks.length ? state.activeAuthorBooks : state.books,
     }
 }
 
@@ -44,7 +44,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     // WhenEver selectBook is called, the result should be passed
     // to all of our reducers
-    return bindActionCreators({ selectBook: selectBook }, dispatch)
+    return bindActionCreators({ selectBookAction: selectBookAction }, dispatch)
 }
 
 
